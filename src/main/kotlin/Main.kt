@@ -1,25 +1,40 @@
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineName
+import kotlinx.coroutines.Deferred
+import kotlinx.coroutines.asCoroutineDispatcher
+import kotlinx.coroutines.async
+import kotlinx.coroutines.runBlocking
 import java.util.concurrent.Executors
 
 suspend fun main(args: Array<String>) {
+//    coroutinesDemo()
+    sequencesDemo()
+}
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Starting program...")
+fun sequencesDemo() {
+    val sequenceDemo = SequenceDemo()
+
+    for (prime in sequenceDemo.primes(5)) {
+        println("Received $prime")
+        if (prime > 30) break
+    }
+}
+
+private fun coroutinesDemo() {
+    println("Starting Coroutines program...")
 //    To use a pool with multiple threads, i.e. the same as the number of cores use the below line
-    Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()).asCoroutineDispatcher().use { context ->
-//    Executors.newSingleThreadExecutor().asCoroutineDispatcher().use { context ->
+//    Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()).asCoroutineDispatcher().use { context ->
+    Executors.newSingleThreadExecutor().asCoroutineDispatcher().use {
         val coroutineDemo = CoroutineDemo()
 
-        runBlocking {
-            withContext(Dispatchers.Default) { coroutineDemo.task1()}
-//            launch(context = context, start = CoroutineStart.UNDISPATCHED) { coroutineDemo.task1() }
-            launch { coroutineDemo.task2() }
-
-            println("Calling Task 1 & Task 2 from: ${Thread.currentThread()}")
+        runBlocking(CoroutineName("Dario Coroutine")) {
+            val count: Deferred<Int> =
+                async(CoroutineName("Dario Task")) {
+                    println("Fetching in: ${Thread.currentThread()}")
+                    Runtime.getRuntime().availableProcessors()
+                }
+            println("Number of cores: ${count.await()}")
         }
 
         println("Ending program.")
     }
-
 }
