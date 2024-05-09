@@ -1,8 +1,5 @@
-import kotlinx.coroutines.CoroutineName
-import kotlinx.coroutines.Deferred
-import kotlinx.coroutines.asCoroutineDispatcher
-import kotlinx.coroutines.async
-import kotlinx.coroutines.runBlocking
+
+import kotlinx.coroutines.*
 import java.util.concurrent.Executors
 
 suspend fun main(args: Array<String>) {
@@ -11,6 +8,7 @@ suspend fun main(args: Array<String>) {
 }
 
 fun sequencesDemo() {
+    for (word in "hell".."help") { print("$word, ") }
     val sequenceDemo = SequenceDemo()
 
     for (prime in sequenceDemo.primes(5)) {
@@ -19,7 +17,7 @@ fun sequencesDemo() {
     }
 }
 
-private fun coroutinesDemo() {
+private suspend fun coroutinesDemo() {
     println("Starting Coroutines program...")
 //    To use a pool with multiple threads, i.e. the same as the number of cores use the below line
 //    Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors()).asCoroutineDispatcher().use { context ->
