@@ -15,9 +15,17 @@ suspend fun main(args: Array<String>) {
 //    val strings: Array<String> = arrayOf("c", "acc", "ccc")
 //    val strings: Array<String> = arrayOf("c")
 //    println(longestCommonPrefix(strings))
-    val dupes = RemoveDuplicates()
-    val nums = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)
-    println(dupes.removeDuplicates(nums))
+//    val dupes = RemoveDuplicates()
+//    val nums = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)
+//    println(dupes.removeDuplicates(nums))
+//    val needleHaystack = NeedleHaystack()
+//    val searchInsert = SearchInsert()
+//    val l1 = intArrayOf(1)
+//    println(searchInsert.searchInsert(l1, 0))
+    val lastWord = LastWord()
+    println(lastWord.lengthOfLastWord("   fly me   to   the moon  "))
+
+//    println(needleHaystack.strStr("sadbuttsad", "sad"))
 }
 
 class ListNode(var `val`: Int) {
