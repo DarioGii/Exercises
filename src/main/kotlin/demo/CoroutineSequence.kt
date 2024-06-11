@@ -1,3 +1,5 @@
+package demo
+
 operator fun ClosedRange<String>.iterator(): Iterator<String> = iterator {
     val next = StringBuilder(start)
     val last = endInclusive

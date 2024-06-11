@@ -1,35 +1,49 @@
+import demo.CoroutineDemo
+import demo.LambdaExpressions
+import demo.SequenceDemo
+import demo.iterator
+import exercises.AddTwoNumbers
+import exercises.Cycle
+import exercises.RemoveDuplicates
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
+import model.ListNode
 import java.util.concurrent.Executors
 
 suspend fun main(args: Array<String>) {
 //    coroutinesDemo()
 //    sequencesDemo()
 //    lambdaDemo()
-//    val strings: Array<String> = arrayOf("flower", "flow", "flight")
-//    val strings: Array<String> = arrayOf("dog", "racecar", "car")
-//    val strings: Array<String> = arrayOf("aaa", "aa", "aaa")
-//    val strings: Array<String> = arrayOf("c", "acc", "ccc")
-//    val strings: Array<String> = arrayOf("c")
-//    println(longestCommonPrefix(strings))
-//    val dupes = RemoveDuplicates()
-//    val nums = intArrayOf(0, 0, 1, 1, 1, 2, 2, 3, 3, 4)
-//    println(dupes.removeDuplicates(nums))
-//    val needleHaystack = NeedleHaystack()
-//    val searchInsert = SearchInsert()
-//    val l1 = intArrayOf(1)
-//    println(searchInsert.searchInsert(l1, 0))
-    val lastWord = LastWord()
-    println(lastWord.lengthOfLastWord("   fly me   to   the moon  "))
+    val cycles = Cycle()
+    val addTwoNumbers = AddTwoNumbers()
+    val l1 = ListNode(3)
+    l1.next = ListNode(2)
+    l1.next?.next = ListNode(0)
+    l1.next?.next?.next = ListNode(-4)
+    l1.next?.next?.next?.next = l1.next
+//    l1.next?.next?.next = ListNode(0)
+//    l1.next?.next?.next?.next = ListNode(1)
+//    l1.next?.next?.next?.next?.next = ListNode(9)
+//    l1.next?.next?.next?.next?.next?.next = ListNode(0)
+//    l1.next?.next?.next?.next?.next?.next?.next = ListNode(1)
+//    l1.next?.next?.next?.next?.next?.next?.next?.next = ListNode(6)
+//    l1.next?.next?.next?.next?.next?.next?.next?.next?.next = ListNode(1)
+    val l2 = ListNode(5)
+    l2.next = ListNode(5)
+    l2.next?.next = ListNode(8)
+//    l2.next?.next?.next = ListNode(6)
+//    l2.next?.next?.next?.next = ListNode(2)
+//    l2.next?.next?.next?.next?.next = ListNode(5)
+//    l2.next?.next?.next?.next?.next?.next = ListNode(8)
+//    l2.next?.next?.next?.next?.next?.next?.next = ListNode(2)
+//    l2.next?.next?.next?.next?.next?.next?.next?.next = ListNode(6)
+//    l2.next?.next?.next?.next?.next?.next?.next?.next?.next = ListNode(1)
+//    printList(addTwoNumbers.addTwoNumbers(l1, l2))
+    println(cycles.detectCycle(l1))
 
-//    println(needleHaystack.strStr("sadbuttsad", "sad"))
-}
-
-class ListNode(var `val`: Int) {
-    var next: ListNode? = null
 }
 
 fun mergeTwoSortedLists(
@@ -66,24 +80,11 @@ fun mergeTwoSortedLists(
 }
 
 fun traverseLinkedList(list1: ListNode?) {
-    if (list1 == null) {
-        return
-    }
+    if (list1 == null) return
 
     println(list1.`val`)
 
     traverseLinkedList(list1.next)
-}
-
-fun reverseLinkedList(list1: ListNode?): ListNode? {
-    if (list1 == null) {
-        return null
-    }
-
-    val temp = ListNode(list1.`val`)
-    temp.next = reverseLinkedList(list1.next)
-
-    return temp
 }
 
 fun removeElement(
@@ -140,6 +141,18 @@ private fun findLongestCommonPrefix(prefixes: List<Pair<String, Int>>): String {
     }
 
     return longestPrefix.first
+}
+
+private fun printList(node: ListNode?) {
+    var current = node
+    while (current != null) {
+        print(current.`val`)
+        if (current.next != null) {
+            print(" -> ")
+        }
+        current = current.next
+    }
+    println()
 }
 
 fun lambdaDemo() {

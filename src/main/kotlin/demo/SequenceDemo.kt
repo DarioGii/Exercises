@@ -1,3 +1,5 @@
+package demo
+
 class SequenceDemo {
     fun primes(start: Int): Sequence<Int> {
         return sequence<Int> {

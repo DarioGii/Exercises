@@ -1,3 +1,5 @@
+package exercises
+
 class SearchInsert {
     fun searchInsert(
         nums: IntArray,

@@ -1,3 +1,5 @@
+package demo
+
 import kotlinx.coroutines.yield
 
 class CoroutineDemo {

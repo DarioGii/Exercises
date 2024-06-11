@@ -1,3 +1,5 @@
+package demo
+
 class LambdaExpressions {
     fun walk1To(
         n: Int,

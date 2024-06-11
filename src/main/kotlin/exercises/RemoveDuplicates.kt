@@ -1,3 +1,7 @@
+package exercises
+
+import model.ListNode
+
 class RemoveDuplicates {
     fun removeDuplicates(nums: IntArray): Int {
         if (nums.size == 1) return 1
@@ -22,5 +26,18 @@ class RemoveDuplicates {
 
         nums.sort()
         return nums.count { it != 101 }
+    }
+
+    fun deleteDuplicates(head: ListNode?): ListNode? {
+        if (head == null) return head
+
+        deleteDuplicates(head.next)
+
+        if (head.`val` == head.next?.`val`) {
+            head.next = head.next?.next
+            return head
+        }
+
+        return head
     }
 }
