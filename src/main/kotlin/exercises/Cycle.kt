@@ -23,17 +23,29 @@ class Cycle {
     fun detectCycle(head: ListNode?): ListNode? {
         if (head == null) return null
 
-        var slow = head
-        var fast = head.next
+        var intersect: ListNode? = findIntersection(head) ?: return null
 
-        while (slow != fast) {
-            if (fast?.next == null || fast.next?.next == null) {
-                return null
-            } else {
-                slow = slow?.next
-                fast = fast.next?.next
-            }
+        var start = head.next
+
+        while (start != intersect) {
+            start = start?.next
+            intersect = intersect?.next?.next
         }
-        return slow
+
+        return start?.next
+    }
+
+    private fun findIntersection(node: ListNode?): ListNode? {
+        var slow = node
+        var fast = node?.next
+
+        while (fast?.next != null) {
+            slow = slow?.next
+            fast = fast.next?.next
+
+            if (slow == fast) return slow
+        }
+
+        return null
     }
 }

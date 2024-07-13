@@ -2,9 +2,7 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
-import exercises.AddTwoNumbers
-import exercises.Cycle
-import exercises.RemoveDuplicates
+import exercises.LongestPalindromicString
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -17,33 +15,8 @@ suspend fun main(args: Array<String>) {
 //    coroutinesDemo()
 //    sequencesDemo()
 //    lambdaDemo()
-    val cycles = Cycle()
-    val addTwoNumbers = AddTwoNumbers()
-    val l1 = ListNode(3)
-    l1.next = ListNode(2)
-    l1.next?.next = ListNode(0)
-    l1.next?.next?.next = ListNode(-4)
-    l1.next?.next?.next?.next = l1.next
-//    l1.next?.next?.next = ListNode(0)
-//    l1.next?.next?.next?.next = ListNode(1)
-//    l1.next?.next?.next?.next?.next = ListNode(9)
-//    l1.next?.next?.next?.next?.next?.next = ListNode(0)
-//    l1.next?.next?.next?.next?.next?.next?.next = ListNode(1)
-//    l1.next?.next?.next?.next?.next?.next?.next?.next = ListNode(6)
-//    l1.next?.next?.next?.next?.next?.next?.next?.next?.next = ListNode(1)
-    val l2 = ListNode(5)
-    l2.next = ListNode(5)
-    l2.next?.next = ListNode(8)
-//    l2.next?.next?.next = ListNode(6)
-//    l2.next?.next?.next?.next = ListNode(2)
-//    l2.next?.next?.next?.next?.next = ListNode(5)
-//    l2.next?.next?.next?.next?.next?.next = ListNode(8)
-//    l2.next?.next?.next?.next?.next?.next?.next = ListNode(2)
-//    l2.next?.next?.next?.next?.next?.next?.next?.next = ListNode(6)
-//    l2.next?.next?.next?.next?.next?.next?.next?.next?.next = ListNode(1)
-//    printList(addTwoNumbers.addTwoNumbers(l1, l2))
-    println(cycles.detectCycle(l1))
-
+    val longestPalindromicString = LongestPalindromicString()
+    longestPalindromicString.longestPalindrome("babad")
 }
 
 fun mergeTwoSortedLists(
