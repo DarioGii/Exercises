@@ -2,7 +2,7 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
-import exercises.LongestPalindromicString
+import exercises.LongestCommonSubsequence
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -15,8 +15,10 @@ suspend fun main(args: Array<String>) {
 //    coroutinesDemo()
 //    sequencesDemo()
 //    lambdaDemo()
-    val longestPalindromicString = LongestPalindromicString()
-    longestPalindromicString.longestPalindrome("babad")
+//    val longestPalindromicString = LongestPalindromicString()
+    val longestCommonSubsequence = LongestCommonSubsequence()
+//    longestPalindromicString.longestPalindrome("babad")
+    println(longestCommonSubsequence.longestCommonSubsequence("abcde", "abc"))
 }
 
 fun mergeTwoSortedLists(
