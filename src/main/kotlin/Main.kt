@@ -2,7 +2,7 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
-import exercises.LongestCommonSubsequence
+import exercises.Fibonacci
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -16,9 +16,19 @@ suspend fun main(args: Array<String>) {
 //    sequencesDemo()
 //    lambdaDemo()
 //    val longestPalindromicString = LongestPalindromicString()
-    val longestCommonSubsequence = LongestCommonSubsequence()
+//    val longestCommonSubsequence = LongestCommonSubsequence()
 //    longestPalindromicString.longestPalindrome("babad")
-    println(longestCommonSubsequence.longestCommonSubsequence("abcde", "abc"))
+//    println(longestCommonSubsequence.longestCommonSubsequence("abcde", "abc"))
+//    val median = MedianArrays()
+//    val n1 = intArrayOf(1, 2)
+//    val n2 = intArrayOf(3, 4)
+
+//    println(median.findMedianSortedArrays(n1, n2))
+//    val n = intArrayOf(3, 3)
+//    val twoSum = TwoSum()
+//    println(twoSum.twoSum(n, 6))
+    val fibonacci = Fibonacci()
+    println(fibonacci.fib(7))
 }
 
 fun mergeTwoSortedLists(
