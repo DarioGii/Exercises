@@ -2,7 +2,7 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
-import exercises.Fibonacci
+import exercises.MajorityElement
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -27,8 +27,12 @@ suspend fun main(args: Array<String>) {
 //    val n = intArrayOf(3, 3)
 //    val twoSum = TwoSum()
 //    println(twoSum.twoSum(n, 6))
-    val fibonacci = Fibonacci()
-    println(fibonacci.fib(7))
+//    val fibonacci = Fibonacci()
+//    println(fibonacci.fib(7))
+//    val findSubstring = FindSubstring()
+//    println(findSubstring.findSubstring("barfoofoobarthefoobarman", arrayOf("bar", "foo", "the")))
+    val maj = MajorityElement()
+    println(maj.majorityElement(intArrayOf(2, 2, 1, 1, 1, 2, 2)))
 }
 
 fun mergeTwoSortedLists(
