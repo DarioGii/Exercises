@@ -2,7 +2,11 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
+<<<<<<< HEAD
 import exercises.*
+=======
+import exercises.Sainsburys
+>>>>>>> c706951 (other exercises)
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
