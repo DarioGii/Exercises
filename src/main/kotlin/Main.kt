@@ -2,6 +2,8 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
+import exercises.FirstUniqueChar
+import exercises.IntersectionArrays
 import exercises.MajorityElement
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
@@ -31,8 +33,10 @@ suspend fun main(args: Array<String>) {
 //    println(fibonacci.fib(7))
 //    val findSubstring = FindSubstring()
 //    println(findSubstring.findSubstring("barfoofoobarthefoobarman", arrayOf("bar", "foo", "the")))
-    val maj = MajorityElement()
-    println(maj.majorityElement(intArrayOf(2, 2, 1, 1, 1, 2, 2)))
+//    val intersection = IntersectionArrays()
+//    print(intersection.intersection(intArrayOf(1), intArrayOf(3)))
+    val uniqueChar = FirstUniqueChar()
+    println(uniqueChar.firstUniqChar("dddccdbba"))
 }
 
 fun mergeTwoSortedLists(
