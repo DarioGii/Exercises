@@ -4,7 +4,7 @@ import demo.SequenceDemo
 import demo.iterator
 import exercises.FirstUniqueChar
 import exercises.IntersectionArrays
-import exercises.MajorityElement
+import exercises.BuySellStock
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -37,6 +37,10 @@ suspend fun main(args: Array<String>) {
 //    print(intersection.intersection(intArrayOf(1), intArrayOf(3)))
     val uniqueChar = FirstUniqueChar()
     println(uniqueChar.firstUniqChar("dddccdbba"))
+//    val maj = MajorityElement()
+//    println(maj.majorityElement(intArrayOf(2, 2, 1, 1, 1, 2, 2)))
+    val buySellStock = BuySellStock()
+    println(buySellStock.maxProfit(intArrayOf(3, 3)))
 }
 
 fun mergeTwoSortedLists(
