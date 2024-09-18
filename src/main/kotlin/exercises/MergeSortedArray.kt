@@ -1,5 +1,7 @@
 package exercises
 
+import kotlin.math.max
+
 class MergeSortedArray {
     fun merge(
         nums1: IntArray,
@@ -7,45 +9,35 @@ class MergeSortedArray {
         nums2: IntArray,
         n: Int,
     ) {
-        if (n == 0 && m == 1) {
-            return
-        } else if (m == 0 && n == 1) {
+        if (m == 0 && nums2.size == 1) {
             nums1[0] = nums2.first()
             return
         }
+        if (m == 1 && n == 0) return
 
-        val sortedNums: IntArray = IntArray(m + n)
-        var nums2Pos = 0
+        var pointer = (m + n) - 1
+        var pointer1 = m - 1
+        var pointer2 = n - 1
 
-        for ((index, num1Val) in nums1.withIndex()) {
-            if (num1Val == 0) {
-                break
-            }
-
-            for ((index1, num2Val) in nums2.withIndex()) {
-                if (num1Val <= num2Val) {
-                    sortedNums[index] = num1Val
-                } else {
-                    sortedNums[index] = num2Val
-                    nums2Pos++
-                }
-            }
-        }
-
-        val unfilledStartPos = sortedNums.indexOf(0)
-
-        if (unfilledStartPos != -1) {
-            for (i in unfilledStartPos..sortedNums.size) {
-                for (j in nums2Pos..nums2.size) {
-                    sortedNums[i] = nums2[j]
-                }
+        while (pointer1 >= 0 && pointer2 >= 0) {
+            if (nums2[pointer2] > nums1[pointer1]) {
+                nums1[pointer] = nums2[pointer2]
+                pointer--
+                pointer2--
+            } else {
+                nums1[pointer] = nums1[pointer1]
+                pointer--
+                pointer1--
             }
         }
 
-        for ((index, i) in sortedNums.withIndex()) {
-            nums1[index] = i
+        while (pointer2 >= 0) {
+            nums1[pointer] = nums2[pointer2]
+            pointer2--
+            pointer--
         }
     }
+
 
 //    fixMe: Working solution
 //    fun merge(nums1: IntArray, m: Int, nums2: IntArray, n: Int): Unit {
