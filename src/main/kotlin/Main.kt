@@ -2,9 +2,7 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
-import exercises.FirstUniqueChar
-import exercises.IntersectionArrays
-import exercises.BuySellStock
+import exercises.Sainsburys
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -17,30 +15,8 @@ suspend fun main(args: Array<String>) {
 //    coroutinesDemo()
 //    sequencesDemo()
 //    lambdaDemo()
-//    val longestPalindromicString = LongestPalindromicString()
-//    val longestCommonSubsequence = LongestCommonSubsequence()
-//    longestPalindromicString.longestPalindrome("babad")
-//    println(longestCommonSubsequence.longestCommonSubsequence("abcde", "abc"))
-//    val median = MedianArrays()
-//    val n1 = intArrayOf(1, 2)
-//    val n2 = intArrayOf(3, 4)
-
-//    println(median.findMedianSortedArrays(n1, n2))
-//    val n = intArrayOf(3, 3)
-//    val twoSum = TwoSum()
-//    println(twoSum.twoSum(n, 6))
-//    val fibonacci = Fibonacci()
-//    println(fibonacci.fib(7))
-//    val findSubstring = FindSubstring()
-//    println(findSubstring.findSubstring("barfoofoobarthefoobarman", arrayOf("bar", "foo", "the")))
-//    val intersection = IntersectionArrays()
-//    print(intersection.intersection(intArrayOf(1), intArrayOf(3)))
-    val uniqueChar = FirstUniqueChar()
-    println(uniqueChar.firstUniqChar("dddccdbba"))
-//    val maj = MajorityElement()
-//    println(maj.majorityElement(intArrayOf(2, 2, 1, 1, 1, 2, 2)))
-    val buySellStock = BuySellStock()
-    println(buySellStock.maxProfit(intArrayOf(3, 3)))
+    val sainsburys = Sainsburys()
+    println(sainsburys.gen(2))
 }
 
 fun mergeTwoSortedLists(
