@@ -2,7 +2,7 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
-import exercises.Sainsburys
+import exercises.*
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -15,8 +15,10 @@ suspend fun main(args: Array<String>) {
 //    coroutinesDemo()
 //    sequencesDemo()
 //    lambdaDemo()
-    val sainsburys = Sainsburys()
-    println(sainsburys.gen(2))
+//    val findUniqueAnagrams = FindUniqueAnagrams()
+//    println(findUniqueAnagrams.groupAnagrams(arrayOf("eat","tea","tan","ate","nat","bat")))
+    val uniqueEmailAddresses = UniqueEmailAddresses()
+    println("Emails that will be sent: ${uniqueEmailAddresses.numUniqueEmails(arrayOf("test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"))}")
 }
 
 fun mergeTwoSortedLists(

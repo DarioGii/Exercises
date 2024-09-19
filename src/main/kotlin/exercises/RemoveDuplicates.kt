@@ -31,11 +31,35 @@ class RemoveDuplicates {
     fun deleteDuplicates(head: ListNode?): ListNode? {
         if (head == null) return head
 
-        deleteDuplicates(head.next)
+        var first = head
+        var pos = 0
+        val duplicatePos = mutableListOf<Int>()
 
-        if (head.`val` == head.next?.`val`) {
-            head.next = head.next?.next
-            return head
+        while (first != null) {
+            if (first.`val` == first.next?.`val`) {
+                if (!duplicatePos.contains(pos)) {
+                    duplicatePos.add(pos)
+                    duplicatePos.add(pos.inc())
+                } else {
+                    duplicatePos.add(pos.inc())
+                }
+            }
+
+            first = first.next
+            pos++
+        }
+
+        pos = 0
+        var temp = head
+
+        while (temp != null) {
+            if (duplicatePos.contains(pos)) {
+                temp?.next = temp?.next?.next
+            } else {
+                temp = temp.next
+            }
+
+            pos++
         }
 
         return head
