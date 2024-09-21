@@ -1,16 +1,4 @@
-import demo.CoroutineDemo
-import demo.LambdaExpressions
-import demo.SequenceDemo
-import demo.iterator
-<<<<<<< HEAD
-<<<<<<< HEAD
-import exercises.*
-=======
-import exercises.Sainsburys
->>>>>>> c706951 (other exercises)
-=======
-import exercises.FirstLastPos
->>>>>>> e74194e (exercises :fire:)
+import demo.*
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -25,10 +13,29 @@ suspend fun main(args: Array<String>) {
 //    lambdaDemo()
 //    val findUniqueAnagrams = FindUniqueAnagrams()
 //    println(findUniqueAnagrams.groupAnagrams(arrayOf("eat","tea","tan","ate","nat","bat")))
-    val uniqueEmailAddresses = UniqueEmailAddresses()
-    println("Emails that will be sent: ${uniqueEmailAddresses.numUniqueEmails(arrayOf("test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"))}")
-//    val anagrams = FindAnagrams()
-//    println(anagrams.anagram(listOf("cat", "dog", "tac", "god", "act")))
+//    val uniqueEmailAddresses = UniqueEmailAddresses()
+//    println("Emails that will be sent: ${uniqueEmailAddresses.numUniqueEmails(arrayOf("test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"))}")
+//    val subArrayK = SubArrayK()
+//    println("Total number of sub arrays == to k: ${subArrayK.subarraySum(intArrayOf(1,1,1), 2)}")
+    val bubbleSort = BubbleSort()
+    val mergesort = Mergesort()
+    val selectionSort = SelectionSort()
+    val quicksort = Quicksort()
+    val list = intArrayOf(98, 3, 55, 23, 352, 1, 10, 82)
+    println("Before: ${list.toList()}")
+
+    println("Bubble sort after: ${bubbleSort.sortAscending(list).toList()}")
+
+    list.shuffle()
+    mergesort.sort(list)
+    println("Mergesort after: ${list.toList()}")
+
+    list.shuffle()
+    println("Selection Sort after: ${selectionSort.sortAscending(list).toList()}")
+
+    list.shuffle()
+    println("Quicksort after: ${quicksort.sort(list).toList()}")
+
 }
 
 fun mergeTwoSortedLists(
