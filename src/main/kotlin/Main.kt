@@ -2,15 +2,7 @@ import demo.CoroutineDemo
 import demo.LambdaExpressions
 import demo.SequenceDemo
 import demo.iterator
-<<<<<<< HEAD
-<<<<<<< HEAD
 import exercises.*
-=======
-import exercises.Sainsburys
->>>>>>> c706951 (other exercises)
-=======
-import exercises.FirstLastPos
->>>>>>> e74194e (exercises :fire:)
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
@@ -25,10 +17,20 @@ suspend fun main(args: Array<String>) {
 //    lambdaDemo()
 //    val findUniqueAnagrams = FindUniqueAnagrams()
 //    println(findUniqueAnagrams.groupAnagrams(arrayOf("eat","tea","tan","ate","nat","bat")))
-    val uniqueEmailAddresses = UniqueEmailAddresses()
-    println("Emails that will be sent: ${uniqueEmailAddresses.numUniqueEmails(arrayOf("test.email+alex@leetcode.com","test.e.mail+bob.cathy@leetcode.com","testemail+david@lee.tcode.com"))}")
+//    val uniqueEmailAddresses = UniqueEmailAddresses()
+//    println(
+//        "Emails that will be sent: ${uniqueEmailAddresses.numUniqueEmails(
+//            arrayOf(
+//                "test.email+alex@leetcode.com",
+//                "test.e.mail+bob.cathy@leetcode.com",
+//                "testemail+david@lee.tcode.com",
+//            ),
+//        )}",
+//    )
 //    val anagrams = FindAnagrams()
 //    println(anagrams.anagram(listOf("cat", "dog", "tac", "god", "act")))
+    val pow = PowX()
+    println("Power: ${pow.myPow(3.0, 3)}")
 }
 
 fun mergeTwoSortedLists(
