@@ -1,4 +1,4 @@
-package exercises
+package Leetcode75
 
 class MoveZeroes {
     fun moveZeroes(nums: IntArray) {
