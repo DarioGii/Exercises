@@ -1,4 +1,4 @@
-package demo
+package algorithms
 
 class SelectionSort {
     fun sortAscending(list: IntArray): IntArray {

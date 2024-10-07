@@ -1,4 +1,4 @@
-package demo
+package algorithms
 
 class Mergesort {
     fun sort(list: IntArray) {

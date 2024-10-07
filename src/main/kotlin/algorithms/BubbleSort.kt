@@ -1,4 +1,4 @@
-package demo
+package algorithms
 
 class BubbleSort {
     fun sortAscending(list: IntArray): IntArray {

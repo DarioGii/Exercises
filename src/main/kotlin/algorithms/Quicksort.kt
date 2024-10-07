@@ -1,4 +1,4 @@
-package demo
+package algorithms
 
 class Quicksort {
     fun sort(list: IntArray, left: Int = 0, right: Int = list.size - 1): IntArray {
