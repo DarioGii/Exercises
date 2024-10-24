@@ -1,7 +1,10 @@
-package Leetcode75
+package leetcode75
 
 class GreatestCommonDivisorOfStrings {
-    fun gcdOfStrings(str1: String, str2: String): String {
+    fun gcdOfStrings(
+        str1: String,
+        str2: String,
+    ): String {
         var gcdString = ""
         val shorter = if (str1.length < str2.length) str1 else str2
         val longer = if (shorter == str1) str2 else str1

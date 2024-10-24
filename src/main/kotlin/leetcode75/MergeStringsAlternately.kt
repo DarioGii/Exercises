@@ -1,7 +1,10 @@
-package Leetcode75
+package leetcode75
 
 class MergeStringsAlternately {
-    fun mergeAlternately(word1: String, word2: String): String {
+    fun mergeAlternately(
+        word1: String,
+        word2: String,
+    ): String {
         var useWord1 = false
         var index1 = 0
         var index2 = 0
@@ -30,7 +33,7 @@ class MergeStringsAlternately {
         return mergedWord
     }
 
-    //fixMe: slightly better
+    // fixMe: slightly better
 //    fun mergeAlternately(word1: String, word2: String): String {
 //        var result=CharArray(word1.length+word2.length) { ' ' }
 //        var index=0

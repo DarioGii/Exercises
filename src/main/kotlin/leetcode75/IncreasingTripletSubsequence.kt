@@ -1,4 +1,4 @@
-package Leetcode75
+package leetcode75
 
 class IncreasingTripletSubsequence {
     fun increasingTriplet(nums: IntArray): Boolean {
@@ -37,7 +37,7 @@ class IncreasingTripletSubsequence {
     }
 
 //    toDo: better solution
-//fun increasingTriplet(nums: IntArray): Boolean {
+// fun increasingTriplet(nums: IntArray): Boolean {
 //    var target = Int.MAX_VALUE
 //    var min = Int.MAX_VALUE
 //    for (n in nums) {
@@ -46,5 +46,5 @@ class IncreasingTripletSubsequence {
 //        if (n < min) min = n
 //    }
 //    return false
-//}
+// }
 }

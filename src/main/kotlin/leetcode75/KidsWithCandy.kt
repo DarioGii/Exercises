@@ -1,7 +1,10 @@
-package Leetcode75
+package leetcode75
 
 class KidsWithCandy {
-    fun kidsWithCandies(candies: IntArray, extraCandies: Int): List<Boolean> {
+    fun kidsWithCandies(
+        candies: IntArray,
+        extraCandies: Int,
+    ): List<Boolean> {
         val mostCandies = mutableListOf<Boolean>()
         val maxCandies = candies.max()
 

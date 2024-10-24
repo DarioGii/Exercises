@@ -1,4 +1,4 @@
-package Leetcode75
+package leetcode75
 
 /**
  * Given a binary array nums and an integer k, return the maximum number of consecutive 1's in the array if you can flip at most k 0's.
@@ -27,7 +27,10 @@ package Leetcode75
  * */
 
 class MaxConsecutiveOnes3 {
-    fun longestOnes(nums: IntArray, k: Int): Int {
+    fun longestOnes(
+        nums: IntArray,
+        k: Int,
+    ): Int {
         if (nums.size == 1) {
             if (k >= 1) return 1
         }

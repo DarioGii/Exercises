@@ -1,4 +1,4 @@
-package Leetcode75
+package leetcode75
 
 /**
  * Given an array of characters chars, compress it using the following algorithm:
@@ -39,7 +39,7 @@ class StringCompression {
         var from = 0
         var currentChar: Char = chars.first()
 
-        for (index in 1 ..< chars.size) {
+        for (index in 1..<chars.size) {
             if (currentChar == chars[index]) {
                 charCount++
             } else {

@@ -1,4 +1,4 @@
-package Leetcode75
+package leetcode75
 
 class ReverseVowelsOfAString {
     fun reverseVowels(s: String): String {
@@ -19,7 +19,7 @@ class ReverseVowelsOfAString {
         vowelPos = vowelPos.reversed().toMutableList()
         var sArray = s.toCharArray()
 
-        for (i in 0 ..< foundVowels.size) {
+        for (i in 0..<foundVowels.size) {
             sArray[vowelPos[i]] = foundVowels[i]
         }
 

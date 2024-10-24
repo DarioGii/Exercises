@@ -1,7 +1,10 @@
-package Leetcode75
+package leetcode75
 
 class CanPlaceFlowers {
-    fun canPlaceFlowers(flowerbed: IntArray, n: Int): Boolean {
+    fun canPlaceFlowers(
+        flowerbed: IntArray,
+        n: Int,
+    ): Boolean {
         if (n == 0) return true
 
         if (flowerbed.size == 1) {
@@ -31,7 +34,7 @@ class CanPlaceFlowers {
                 flowers--
             }
 
-                index++
+            index++
         }
 
         return flowers == 0

@@ -1,4 +1,4 @@
-package Leetcode75
+package leetcode75
 
 class ProductOfArrayExceptSelf {
     fun productExceptSelf(nums: IntArray): IntArray {

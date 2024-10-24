@@ -1,12 +1,15 @@
-package Leetcode75
+package leetcode75
 
 class MaximumNumberOfVowelsInASubstringOfGivenLength {
-    fun maxVowels(s: String, k: Int): Int {
+    fun maxVowels(
+        s: String,
+        k: Int,
+    ): Int {
         var window: String
         var maxVowels = 0
 
-        for (i in 0 .. (s.length - k)) {
-            window = s.substring(i..(i+k)-1)
+        for (i in 0..(s.length - k)) {
+            window = s.substring(i..(i + k) - 1)
             val count = window.count { isVowel(it) }
 
             if (count >= maxVowels) {
@@ -17,7 +20,5 @@ class MaximumNumberOfVowelsInASubstringOfGivenLength {
         return maxVowels
     }
 
-    fun isVowel(c: Char): Boolean {
-        return c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
-    }
+    fun isVowel(c: Char): Boolean = c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u'
 }
