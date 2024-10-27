@@ -36,23 +36,37 @@ package leetcode75
  * */
 
 class PivotIndex {
-    fun pivotIndex(nums: IntArray): Int {
+    fun pivotIndex1(nums: IntArray): Int {
+        if (nums.last() + nums[nums.size - 2] == 0) return 0
+
         val leftSums = mutableListOf(nums.first())
         val rightSums = mutableListOf(nums.last())
         var leftPivotIndex = 1
         var rightPivotIndex = nums.size - 2
 
-//        fixMe
-        while (leftPivotIndex < rightPivotIndex && rightPivotIndex > 0) {
-            leftSums[leftPivotIndex] = leftSums[leftPivotIndex - 1] + nums[leftPivotIndex]
-            rightSums[rightPivotIndex - (rightPivotIndex - 1)] = rightSums[rightPivotIndex + 1] + nums[rightPivotIndex]
+        while (leftPivotIndex < nums.size && rightPivotIndex > 0) {
+            leftSums.add(nums[leftPivotIndex] + leftSums[leftPivotIndex - 1])
+            rightSums.add(nums[rightPivotIndex] + rightSums[leftPivotIndex - 1])
 
-            if (leftSum == rightSum) return leftPivotIndex - 1
+            if (leftSums[leftPivotIndex - 1] == rightSums[rightPivotIndex - (rightPivotIndex - 1)]) return leftPivotIndex
 
             leftPivotIndex++
             rightPivotIndex--
         }
 
-        return leftPivotIndex
+        return -1
+    }
+
+    fun pivotIndex(nums: IntArray): Int {
+        val total = nums.sum()
+        var leftSum = 0
+
+        for (index in 0 until nums.size) {
+            val currentSum = total - leftSum - nums[index]
+
+            if (currentSum == leftSum) return index else leftSum += nums[index]
+        }
+
+        return -1
     }
 }
