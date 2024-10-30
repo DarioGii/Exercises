@@ -26,13 +26,13 @@ class EqualRowsAndPairs {
             columns[row] = colList
         }
 
-
         var pairs = 0
 
         rows.values.forEach { row ->
-            pairs += columns.values.count {
-                it.equals(row)
-            }
+            pairs +=
+                columns.values.count {
+                    it == row
+                }
         }
 
         return pairs
