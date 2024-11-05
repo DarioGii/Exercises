@@ -1,5 +1,7 @@
 plugins {
-    kotlin("jvm") version "1.9.20"
+    kotlin("jvm") version "1.9.25"
+    kotlin("plugin.spring") version "1.9.25"
+    id("org.springframework.boot") version "3.3.5"
     application
 }
 
@@ -12,6 +14,7 @@ repositories {
 
 dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
+    testImplementation("org.springframework.boot:spring-boot-starter-test:3.3.5")
 
     testImplementation(kotlin("test"))
 }

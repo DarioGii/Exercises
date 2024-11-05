@@ -1,13 +1,13 @@
-import uk.co.darioghunneyware.demo.CoroutineDemo
-import uk.co.darioghunneyware.demo.LambdaExpressions
-import uk.co.darioghunneyware.demo.SequenceDemo
-import uk.co.darioghunneyware.demo.iterator
 import kotlinx.coroutines.CoroutineName
 import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.asCoroutineDispatcher
 import kotlinx.coroutines.async
 import kotlinx.coroutines.runBlocking
-import uk.co.darioghunneyware.leetcode75.EqualRowsAndPairs
+import uk.co.darioghunneyware.demo.CoroutineDemo
+import uk.co.darioghunneyware.demo.LambdaExpressions
+import uk.co.darioghunneyware.demo.SequenceDemo
+import uk.co.darioghunneyware.demo.iterator
+import uk.co.darioghunneyware.leetcode75.MaximumNumberOfVowelsInASubstringOfGivenLength
 import uk.co.darioghunneyware.model.ListNode
 import java.util.concurrent.Executors
 
@@ -29,13 +29,13 @@ suspend fun main(args: Array<String>) {
 //    )
 //    val anagrams = FindAnagrams()
 //    println(anagrams.anagram(listOf("cat", "dog", "tac", "god", "act")))
-    val equalRowsAndPairs = EqualRowsAndPairs()
-    println("Pairs: ${equalRowsAndPairs.equalPairs(arrayOf(
-        intArrayOf(3,1,2,2),
-        intArrayOf(1,4,4,5),
-        intArrayOf(2,4,2,2),
-        intArrayOf(2,4,2,2)
-    ))}")
+//    val senate = "RRDDDDDDDRRDRRDDRRRR"
+//    val dota2Senate = Dota2Senate()
+//
+//    println("Winner: ${dota2Senate.predictPartyVictory(senate)}")
+    val s = "tryhard"
+    val vowelsInASubstringOfGivenLength = MaximumNumberOfVowelsInASubstringOfGivenLength()
+    println("Vowel num: ${vowelsInASubstringOfGivenLength.maxVowels(s, 4)}")
 }
 
 fun mergeTwoSortedLists(
