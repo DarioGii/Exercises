@@ -7,7 +7,7 @@ import uk.co.darioghunneyware.demo.CoroutineDemo
 import uk.co.darioghunneyware.demo.LambdaExpressions
 import uk.co.darioghunneyware.demo.SequenceDemo
 import uk.co.darioghunneyware.demo.iterator
-import uk.co.darioghunneyware.leetcode75.MaximumNumberOfVowelsInASubstringOfGivenLength
+import uk.co.darioghunneyware.leetcode75.AsteroidCollision
 import uk.co.darioghunneyware.model.ListNode
 import java.util.concurrent.Executors
 
@@ -33,9 +33,12 @@ suspend fun main(args: Array<String>) {
 //    val dota2Senate = Dota2Senate()
 //
 //    println("Winner: ${dota2Senate.predictPartyVictory(senate)}")
-    val s = "tryhard"
-    val vowelsInASubstringOfGivenLength = MaximumNumberOfVowelsInASubstringOfGivenLength()
-    println("Vowel num: ${vowelsInASubstringOfGivenLength.maxVowels(s, 4)}")
+//    val s = "tryhard"
+//    val vowelsInASubstringOfGivenLength = MaximumNumberOfVowelsInASubstringOfGivenLength()
+//    println("Vowel num: ${vowelsInASubstringOfGivenLength.maxVowels(s, 4)}")
+    val nums = intArrayOf(5, 10, -5)
+    val asteroidCollision = AsteroidCollision()
+    println("How many asteroids left: ${asteroidCollision.asteroidCollision(nums).toList()}")
 }
 
 fun mergeTwoSortedLists(
