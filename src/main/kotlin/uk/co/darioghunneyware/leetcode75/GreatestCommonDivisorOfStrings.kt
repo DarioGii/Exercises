@@ -13,7 +13,7 @@ class GreatestCommonDivisorOfStrings {
 
         while (index < shorter.length) {
             divisible = true
-            val current = shorter.substring(0, index + 1)
+            val current = shorter.take(index + 1)
 
             for (i in 0 until longer.length step current.length) {
                 if (i + current.length > longer.length) {
