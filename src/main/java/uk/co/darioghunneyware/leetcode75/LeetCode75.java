@@ -20,19 +20,9 @@ public class LeetCode75 {
 
         PathSum pathSum = new PathSum();
         Asteroids  asteroids = new Asteroids();
+        MaxNumKSumPairs maxNumKSumPairs = new MaxNumKSumPairs();
+        MaxVowelsGivenLength maxVowelsGivenLength = new MaxVowelsGivenLength();
 
-//        System.out.println(commonDivisor.gcdOfStrings("ABABC", "ABC"));
-//        System.out.println(new KidsCandy().kidsWithCandies(new int[] {2,3,5,1,3}, 3));
-//        System.out.println(new ReverseVowels().reverseVowels("IceCreAm"));
-//        System.out.println(reverseWords.reverseWords("the sky is blue"));
-//        System.out.println(Arrays.toString(productOfArray.productExceptSelf(new int[]{-1,1,0,-3,3})));
-//        System.out.println(compressStrings.compress(new char[] {'a','a','b','b','c','c','c'}));
-//        System.out.println(pathSum.hasPathSum(treeNode, 22));
-//        System.out.println(removeStars.removeStars3("leet**cod*e"));
-//        System.out.println(removeStars.removeStars2("erase*****"));
-        System.out.println(asteroids.asteroidCollision(new int[]{5,10,-5}));
-        System.out.println(asteroids.asteroidCollision(new int[]{8,-8}));
-        System.out.println(asteroids.asteroidCollision(new int[]{10,2,-5}));
-        System.out.println(asteroids.asteroidCollision(new int[]{3,5,-6,2,-1,4}));
+        System.out.println(maxVowelsGivenLength.maxVowels("weallloveyou", 7));
     }
 }

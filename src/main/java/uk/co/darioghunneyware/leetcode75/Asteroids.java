@@ -1,5 +1,6 @@
 package uk.co.darioghunneyware.leetcode75;
 
+import java.util.Iterator;
 import java.util.Stack;
 
 public class Asteroids {
@@ -17,17 +18,30 @@ public class Asteroids {
         }
 
         Stack<Integer> stack = new Stack<>();
-        stack.push(asteroids[0]);
 
-        // fixme: need to check asteroid against other asteroids in the stack. may need a double loop and iterating through stack
-        for (int i = 1; i < asteroids.length; i++) {
-            int asteroid = asteroids[i];
-            Integer peekedAsteroid = stack.peek();
+        for (int asteroid : asteroids) {
+            boolean destroyed = false;
 
-            if ((asteroid > 0 && peekedAsteroid > 0) || (asteroid < 0 && peekedAsteroid < 0)) {
-                stack.push(asteroid);
-            } else if (Math.abs(asteroid) > Math.abs(peekedAsteroid)) {
-                stack.pop();
+            while (!stack.isEmpty()
+                    && stack.peek() > 0
+                    && asteroid < 0) {
+
+                if (stack.peek() < -asteroid) {
+                    // stack asteroid explodes
+                    stack.pop();
+                } else if (stack.peek() == -asteroid) {
+                    // both explode
+                    stack.pop();
+                    destroyed = true;
+                    break;
+                } else {
+                    // incoming asteroid explodes
+                    destroyed = true;
+                    break;
+                }
+            }
+
+            if (!destroyed) {
                 stack.push(asteroid);
             }
         }
