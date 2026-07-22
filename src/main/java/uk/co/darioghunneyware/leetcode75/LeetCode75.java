@@ -1,28 +1,20 @@
 package uk.co.darioghunneyware.leetcode75;
 
-import java.util.Arrays;
+import uk.co.darioghunneyware.leetcode75.model.ListNode;
 
 public class LeetCode75 {
 
     public static void main(String[] args) {
-        CommonDivisor commonDivisor = new CommonDivisor();
-        ReverseWords reverseWords = new ReverseWords();
-        ProductOfArray productOfArray = new ProductOfArray();
-        CompressStrings compressStrings = new CompressStrings();
-        RemoveStars removeStars = new RemoveStars();
-        TreeNode treeNode = new TreeNode(5, new TreeNode(4), new TreeNode(8));
-        treeNode.left.left = new TreeNode(11);
-        treeNode.left.left.left = new TreeNode(7);
-        treeNode.left.left.right = new TreeNode(2);
-        treeNode.right.left = new TreeNode(13);
-        treeNode.right.right = new TreeNode(4);
-        treeNode.right.right.right = new TreeNode(1);
-
-        PathSum pathSum = new PathSum();
-        Asteroids  asteroids = new Asteroids();
-        MaxNumKSumPairs maxNumKSumPairs = new MaxNumKSumPairs();
+//        ListNode node = new ListNode(1);
+//        node.next = new ListNode(3);
+//        node.next.next = new ListNode(4);
+//        node.next.next.next = new ListNode(7);
+//        node.next.next.next.next = new ListNode(1);
+//        node.next.next.next.next.next = new ListNode(2);
+//        node.next.next.next.next.next.next = new ListNode(6);
+//        DeleteMiddleNode deleteMiddleNode = new DeleteMiddleNode();
         MaxVowelsGivenLength maxVowelsGivenLength = new MaxVowelsGivenLength();
 
-        System.out.println(maxVowelsGivenLength.maxVowels("weallloveyou", 7));
+        System.out.println(maxVowelsGivenLength.maxVowels("leetcode", 3));
     }
 }

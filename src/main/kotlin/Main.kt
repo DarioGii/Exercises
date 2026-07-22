@@ -7,38 +7,27 @@ import uk.co.darioghunneyware.demo.CoroutineDemo
 import uk.co.darioghunneyware.demo.LambdaExpressions
 import uk.co.darioghunneyware.demo.SequenceDemo
 import uk.co.darioghunneyware.demo.iterator
-import uk.co.darioghunneyware.leetcode75.AsteroidCollision
+import uk.co.darioghunneyware.leetcode75.ContainerWithMostWater
+import uk.co.darioghunneyware.leetcode75.MaxDepthBinaryTree
+import uk.co.darioghunneyware.leetcode75.MaxVowelsInSubstring
+import uk.co.darioghunneyware.leetcode75.ProductOfArray
+import uk.co.darioghunneyware.leetcode75.ProductOfArrayExceptSelf
 import uk.co.darioghunneyware.model.ListNode
+import uk.co.darioghunneyware.model.TreeNode
 import java.util.concurrent.Executors
 
 suspend fun main(args: Array<String>) {
 //    coroutinesDemo()
 //    sequencesDemo()
 //    lambdaDemo()
-//    val findUniqueAnagrams = FindUniqueAnagrams()
-//    println(findUniqueAnagrams.groupAnagrams(arrayOf("eat","tea","tan","ate","nat","bat")))
-//    val uniqueEmailAddresses = UniqueEmailAddresses()
-//    println(
-//        "Emails that will be sent: ${uniqueEmailAddresses.numUniqueEmails(
-//            arrayOf(
-//                "test.email+alex@leetcode.com",
-//                "test.e.mail+bob.cathy@leetcode.com",
-//                "testemail+david@lee.tcode.com",
-//            ),
-//        )}",
-//    )
-//    val anagrams = FindAnagrams()
-//    println(anagrams.anagram(listOf("cat", "dog", "tac", "god", "act")))
-//    val senate = "RRDDDDDDDRRDRRDDRRRR"
-//    val dota2Senate = Dota2Senate()
-//
-//    println("Winner: ${dota2Senate.predictPartyVictory(senate)}")
-//    val s = "tryhard"
-//    val vowelsInASubstringOfGivenLength = MaximumNumberOfVowelsInASubstringOfGivenLength()
-//    println("Vowel num: ${vowelsInASubstringOfGivenLength.maxVowels(s, 4)}")
-    val nums = intArrayOf(5, 10, -5)
-    val asteroidCollision = AsteroidCollision()
-    println("How many asteroids left: ${asteroidCollision.asteroidCollision(nums).toList()}")
+    val node = TreeNode(3)
+    node.left = TreeNode(9)
+    node.right = TreeNode(20)
+    node.right?.left = TreeNode(5)
+    node.right?.right = TreeNode(7)
+    val maxDepth = MaxDepthBinaryTree()
+
+    println(maxDepth.maxDepth(node))
 }
 
 fun mergeTwoSortedLists(

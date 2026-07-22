@@ -20,7 +20,7 @@ import java.util.List;
  */
 public class PathSum {
 
-    public boolean hasPathSum(TreeNode root, int targetSum) {
+    public boolean hasPathSum(JTreeNode root, int targetSum) {
         // Empty node - no path here
         if (root == null) return false;
 
@@ -34,24 +34,24 @@ public class PathSum {
         return hasPathSum(root.left, remaining) || hasPathSum(root.right, remaining);
     }
 
-    public List<List<Integer>> pathSum(TreeNode root, int targetSum) {
+    public List<List<Integer>> pathSum(JTreeNode root, int targetSum) {
         return new ArrayList<>();
     }
 }
 
-class TreeNode {
+class JTreeNode {
     int val;
-    TreeNode left;
-    TreeNode right;
+    JTreeNode left;
+    JTreeNode right;
 
-    TreeNode() {
+    JTreeNode() {
     }
 
-    TreeNode(int val) {
+    JTreeNode(int val) {
         this.val = val;
     }
 
-    TreeNode(int val, TreeNode left, TreeNode right) {
+    JTreeNode(int val, JTreeNode left, JTreeNode right) {
         this.val = val;
         this.left = left;
         this.right = right;

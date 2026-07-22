@@ -1,7 +1,7 @@
 package uk.co.darioghunneyware.leetcode75
 
 class ProductOfArrayExceptSelf {
-    fun productExceptSelf(nums: IntArray): IntArray {
+    fun productExceptSelf1(nums: IntArray): IntArray {
         if (nums.all { it == 0 }) {
             return IntArray(nums.size)
         }
@@ -30,6 +30,29 @@ class ProductOfArrayExceptSelf {
 //
 //            answer[outer] = product
 //        }
+
+        return answer
+    }
+
+    fun productExceptSelf(nums: IntArray): IntArray {
+        val n = nums.size
+        val answer: IntArray = IntArray(n)
+        val pre: IntArray = IntArray(n)
+        val suff: IntArray = IntArray(n)
+
+        pre[0] = 1
+        suff[n - 1] = 1
+
+        for (i in 1..<n) {
+            pre[i] = pre[i - 1] * nums[i - 1]
+        }
+        for (j in n - 2 downTo 0) {
+            suff[j] = suff[j + 1] * nums[j + 1]
+        }
+
+        for (i in answer.indices) {
+            answer[i] = pre[i] * suff[i]
+        }
 
         return answer
     }

@@ -23,6 +23,37 @@ package uk.co.darioghunneyware.leetcode75;
 public class MaxVowelsGivenLength {
 
     public int maxVowels(String s, int k) {
+        int maxVowels = 0;
+
+        for(int i = 0; i < k; i++){
+            if(isVowel(s.charAt(i))){
+                maxVowels++;
+            }
+        }
+
+        int count = maxVowels;
+
+        for (int i = k; i < s.length(); i++) {
+            if (isVowel(s.charAt(i))) {
+                count++;
+            }
+
+            if (isVowel(s.charAt(i - k))){
+                count--;
+            }
+
+            maxVowels = Math.max(maxVowels, count);
+        }
+
+        return maxVowels;
+    }
+
+    private boolean isVowel(char c) {
+        return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
+    }
+
+    /* First attempt
+    public int maxVowels(String s, int k) {
         int numVowels = 0;
 
         for (int i = 0; i + k <= s.length(); i++) {
@@ -44,9 +75,5 @@ public class MaxVowelsGivenLength {
             }
         }
         return count;
-    }
-
-    private boolean isVowel(char c) {
-        return c=='a' || c=='e' || c=='i' || c=='o' || c=='u';
-    }
+    }*/
 }
